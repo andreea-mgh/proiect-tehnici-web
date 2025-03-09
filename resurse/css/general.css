@@ -5,6 +5,10 @@
     --accent-color-secondary: #701e5e;
     --background-color: #ded1d8;
     --text-color: #20061b;
+
+    --spacing-large: 300px;
+    --spacing-medium: 120px;
+    --spacing-small: 50px;
 }
 
 body {
@@ -24,4 +28,58 @@ blockquote {
 
 blockquote p {
     margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    padding-left: var(--spacing-large);
+    padding-right: var(--spacing-large);
+}
+
+@media (max-width: 800px) {
+    .container {
+        padding-left: var(--spacing-medium);
+        padding-right: var(--spacing-medium);
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding-left: var(--spacing-small);
+        padding-right: var(--spacing-small);
+    }
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 1em;
+    margin: 1em 0;
+    border: 3px dashed var(--accent-color-secondary);
+    border-radius: 1em;
+}
+
+header h1 {
+    color: var(--accent-color);
+}
+
+main {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 3px dashed var(--accent-color-secondary);
+    border-radius: 1em;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 3px dashed var(--accent-color-secondary);
+    border-radius: 1em;
 }
