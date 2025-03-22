@@ -4,6 +4,7 @@
     --accent-color: #ff521b;
     --accent-color-secondary: #701e5e;
     --background-color: #ded1d8;
+    --background-color-secondary: #ffc8b5;
     --text-color: #20061b;
 
     --spacing-large: 300px;
@@ -66,14 +67,14 @@ header h1 {
     color: var(--accent-color);
 }
 
-main {
+/* main {
     background-color: var(--primary-color);
     color: var(--text-color);
     padding: 1em;
     margin-bottom: 1em;
     border: 3px dashed var(--accent-color-secondary);
     border-radius: 1em;
-}
+} */
 
 footer {
     background-color: var(--primary-color);
@@ -82,4 +83,81 @@ footer {
     margin-bottom: 1em;
     border: 3px dashed var(--accent-color-secondary);
     border-radius: 1em;
+}
+
+
+
+/*  creed  */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto auto auto auto;
+    gap: 10px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+header {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.content {
+    grid-column: 1 / -1;
+
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 1em;
+    border: 3px dashed var(--accent-color-secondary);
+    border-radius: 1em;
+}
+
+.calendar { grid-column: 1; }
+.table { grid-column: 2; }
+.announcements { grid-column: 3; }
+
+.calendar, .table, .announcements {
+    background: var(--background-color);
+    border: 3px dashed var(--accent-color-secondary);
+    border-radius: 1em;
+    padding: 2em;
+}
+
+.extra {
+    grid-column: 1 / -1;
+    border: 3px dashed var(--accent-color-secondary);
+    border-radius: 1em;
+    padding: 2em;
+    background: var(--primary-color);
+    color: var(--text-color);
+}
+
+.status { grid-column: 1; }
+.users { grid-column: 2; }
+.stats { grid-column: 3; }
+
+.status, .users, .stats {
+    background: var(--background-color-secondary);
+    border: 3px dashed var(--accent-color-secondary);
+    border-radius: 1em;
+    padding: 2em;
+    text-align: center;
+}
+
+footer {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+    body {
+      grid-template-columns: 1fr;
+    }
+
+    .calendar, .table, .announcements,
+    .status, .users, .stats {
+      grid-column: 1;
+    }
 }
