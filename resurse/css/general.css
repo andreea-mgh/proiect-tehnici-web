@@ -8,8 +8,8 @@
     --text-color: #20061b;
 
     --spacing-large: 300px;
-    --spacing-medium: 120px;
-    --spacing-small: 50px;
+    --spacing-medium: 50px;
+    --spacing-small: 20px;
 }
 
 body {
@@ -34,7 +34,7 @@ blockquote p {
 img {
     max-width: 100%;
 }
-
+/* 
 .container {
     padding-left: var(--spacing-large);
     padding-right: var(--spacing-large);
@@ -51,8 +51,8 @@ img {
     .container {
         padding-left: var(--spacing-small);
         padding-right: var(--spacing-small);
-    }
-}
+    } 
+}*/
 
 header {
     background-color: var(--primary-color);
@@ -66,15 +66,6 @@ header {
 header h1 {
     color: var(--accent-color);
 }
-
-/* main {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    padding: 1em;
-    margin-bottom: 1em;
-    border: 3px dashed var(--accent-color-secondary);
-    border-radius: 1em;
-} */
 
 footer {
     background-color: var(--primary-color);
@@ -90,7 +81,7 @@ footer {
 /*  creed  */
 
 body {
-    margin: 0 10vh;
+    margin: 0 var(--spacing-large);
     font-family: Arial, sans-serif;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -103,6 +94,7 @@ body {
 header {
     grid-column: 1 / -1;
     text-align: center;
+    background-color: var(--secondary-color);
 }
 
 .content {
@@ -123,14 +115,19 @@ header {
     background: var(--background-color);
     border: 3px dashed var(--accent-color-secondary);
     border-radius: 1em;
-    padding: 2em;
+    padding: 1em;
+}
+
+.table {
+    background: var(--primary-color);
+    color: var(--text-color);
 }
 
 .extra {
     grid-column: 1 / -1;
     border: 3px dashed var(--accent-color-secondary);
     border-radius: 1em;
-    padding: 2em;
+    padding: 1em;
     background: var(--primary-color);
     color: var(--text-color);
 }
@@ -151,13 +148,168 @@ footer {
     grid-column: 1 / -1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
+    body {
+      grid-template-columns: 1fr 1fr;
+      margin: 0 var(--spacing-medium);
+      gap: 5px;
+    }
+
+    .calendar, .table, .announcements,
+    .status, .users, .stats {
+      grid-column: span 2;
+    }
+    
+}
+
+@media (max-width: 500px) {
     body {
       grid-template-columns: 1fr;
+      margin: 0 var(--spacing-small);
+      gap: 0;
     }
 
     .calendar, .table, .announcements,
     .status, .users, .stats {
       grid-column: 1;
     }
+    
+    header, .content, .calendar, .table, .extra, .announcements,
+    .status, .users, .stats, footer {
+      border-radius: 0;
+      margin: 0;
+      border-bottom: none;
+    }
+}
+
+
+/* tabell */
+
+.table {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+caption {
+    caption-side: bottom;
+    padding-top: 10px;
+    font-style: italic;
+}
+
+thead th {
+    border: 3px solid #4A90E2;
+}
+
+tbody td {
+    border: 1px solid #4A90E2;
+}
+
+tbody tr {
+    height: 3em;
+}
+
+tbody tr:nth-child(odd) {
+    box-shadow: 0 4px 8px var(--accent-color);
+    color: #4A90E2;
+}
+
+tbody tr:nth-child(even) {
+    box-shadow: 0 4px 8px var(--text-color);
+    color: #FF6347;
+}
+
+tbody tr:hover {
+    background-color: #eef7ff;
+    font-size: 1.2em;
+    transition: all 0.75s ease;
+}
+
+tfoot td {
+    border: 2px solid #4A90E2;
+    font-weight: bold;
+}
+
+
+/* iframe video */
+
+iframe.video {
+    border: 3px solid var(--accent-color-secondary);
+    
+    max-width: 100%;
+}
+
+.vid-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.vid-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: bottom;
+    flex-direction: row;
+}
+
+.vid-tabs a {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.75em;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 0 8px var(--accent-color-secondary);
+    transition: background-color 0.3s ease;
+}
+
+.vid-tabs a:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* TOP LINK */
+
+div.top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    padding: 10px 15px;
+    border: 3px solid var(--accent-color);
+    border-radius: 1rem;
+    border-bottom: none;
+    border-top: none;
+    opacity: 0.5;
+}
+div.top-button:hover {
+    border-color: var(--accent-color-secondary);
+    color: var(--text-color);
+    opacity: 1;
+    transition: border-color 0.3s ease;
+    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+.top-button a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.75em;
+}
+div.top-button:hover a {
+    transform: translateY(-8px);
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+    transition: transform 0.5s ease;
 }

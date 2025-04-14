@@ -25,6 +25,9 @@
 
 <body>
     <!-- <div class="container"> -->
+        <div class="top-button">
+            <a href="#top" title="sus" id="link-top">&#x25B4</a>
+        </div>
         <header>
             <!-- <h1>HANDMADE HEAVEN</h1> -->
              <img src="resurse/img/logo_hh.png" alt="Logo Handmade Heaven" style="height: 10em;">
@@ -54,13 +57,19 @@
         <section id="magazin">
             <h2>Cel mai magazin pentru nevoile tale artistice</h2>
 
-            <a href="https://www.youtube-nocookie.com/embed/wN1AgchixP8" target="ifr-video">Mental health benefits of art</a>
-            <a href="https://www.youtube-nocookie.com/embed/AJfG9PodGbw" target="ifr-video">Tutorial mărgelit</a>
-            <a href="https://www.youtube-nocookie.com/embed/th7rc-xEVzE" target="ifr-video">Ghid de sculptură (începători)</a>
-            <br>
+            <div class="vid-box">
+                <div class="vid-tabs">
+                    <a href="https://www.youtube-nocookie.com/embed/wN1AgchixP8" target="ifr-video">Mental health benefits of art</a>
+                    <a href="https://www.youtube-nocookie.com/embed/AJfG9PodGbw" target="ifr-video">Tutorial mărgelit</a>
+                    <a href="https://www.youtube-nocookie.com/embed/th7rc-xEVzE" target="ifr-video">Ghid de sculptură (începători)</a>
+                    <!-- <br> -->
+                </div>
+                
+                <iframe class="video" name="ifr-video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/wN1AgchixP8" title="YouTube Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-            <iframe name="ifr-video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/wN1AgchixP8" title="YouTube Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
 
+            
             <figure>
                 <picture>
                     <source media="(min-width: 800px)" srcset="resurse/img/hh1_large.jpg">
@@ -161,7 +170,53 @@
         </div>
 
         <div class="table">
-            tabell????
+            <table>
+                <caption>Lista workshop-urilor viitoare</caption>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Workshop</th>
+                        <th>Locație</th>
+                        <th colspan="2">Interval orar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10.04.2025</td>
+                        <td>Modelare cu lut polimeric</td>
+                        <td>București</td>
+                        <td>16:00</td>
+                        <td>17:30</td>
+                    </tr>
+                    <tr>
+                        <td>12.04.2025</td>
+                        <td>Lucru cu mărgele de nisip</td>
+                        <td>Iași</td>
+                        <td>11:00</td>
+                        <td>12:00</td>
+                    </tr>
+                    <tr>
+                        <td>18.04.2025</td>
+                        <td>Tehnici avansate de croșetat</td>
+                        <td>Timișoara</td>
+                        <td>17:30</td>
+                        <td>18:30</td>
+                    </tr>
+                    <tr>
+                        <td>25.04.2025</td>
+                        <td>Cum să vinzi produse handmade</td>
+                        <td>ONLINE</td>
+                        <td>18:00</td>
+                        <td>19:00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">Pentru detalii și înscriere, verificați secțiunea de evenimente!</td>
+                    </tr>
+                </tfoot>
+            </table>
+
         </div>
 
         <div class="announcements">
