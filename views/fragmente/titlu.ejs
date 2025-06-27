@@ -1,0 +1,37 @@
+<header>
+    <h1 class="print-only">HANDMADE HEAVEN</h1>
+    <img id="banner-logo" src="/res/img/logo_hh.png" alt="Handmade Heaven" style="height: 10em;">
+    
+    <nav class="navbar">
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul class="meniu" id="meniu">
+            <li>Acasă</li>
+            <li><a href="magazin.html">Magazin</a>
+                <ul>
+                    <li><a href="pictura.html">Pictura</a></li>
+                    <li><a href="modelat.html">Modelat</a></li>
+                    <li><a href="margelit.html">Mărgelit</a></li>
+                    <li><a href="crosetat.html">Croșetat</a></li>
+                    <li><a href="sculptura.html">Sculptură</a></li>
+                </ul>
+            </li>
+            <li><a href="info.html">Informații</a>
+                <ul>
+                    <li><a href="info.html#despre">Despre Noi</a></li>
+                    <li><a href="info.html#contact">Contact</a></li>
+                </ul>
+            </li>
+        </ul>
+        
+    </nav>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const meniu = document.getElementById('meniu');
+
+        hamburger.addEventListener('click', () => {
+            meniu.classList.toggle('active');
+        });
+
+    </script>
+</header>

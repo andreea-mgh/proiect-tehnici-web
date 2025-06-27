@@ -20,5 +20,8 @@
     "url": "https://github.com/andreea-mgh/proiect-tehnici-web/issues"
   },
   "homepage": "https://github.com/andreea-mgh/proiect-tehnici-web#readme",
-  "description": "Proiect tehnici Web"
+  "description": "Proiect tehnici Web",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }

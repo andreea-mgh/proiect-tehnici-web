@@ -11,61 +11,26 @@
     <title>Handmade Heaven</title>
 
     <!-- ICO  -->
-    <link rel="icon" type="image/png" href="resurse/ico/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/svg+xml" href="resurse/ico/favicon.svg">
-    <link rel="shortcut icon" href="resurse/ico/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="resurse/ico/apple-touch-icon.png">
-    <link rel="manifest" href="resurse/ico/site.webmanifest">
+    <link rel="icon" type="image/png" href="/res/ico/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/res/ico/favicon.svg">
+    <link rel="shortcut icon" href="/res/ico/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/res/ico/apple-touch-icon.png">
+    <link rel="manifest" href="/res/ico/site.webmanifest">
 
     <!-- CSS  -->
-    <link href="resurse/css/general.css" rel="stylesheet" type="text/css">
+    <link href="/res/css/general.css" rel="stylesheet" type="text/css">
 
 
 </head>
 
 <body>
-    <!-- <div class="container"> -->
+
         <div class="top-button">
             <a href="#top" title="sus" id="link-top">&#x25B4</a>
         </div>
         <div class="watermark print-only">Andreea Megherlich</div>
-        <header>
-            <h1 class="print-only">HANDMADE HEAVEN</h1>
-            <img id="banner-logo" src="resurse/img/logo_hh.png" alt="Handmade Heaven" style="height: 10em;">
-            
-            <nav class="navbar">
-                <div class="hamburger" id="hamburger">&#9776;</div>
-                <ul class="meniu" id="meniu">
-                    <li>Acasă</li>
-                    <li><a href="magazin.html">Magazin</a>
-                        <ul>
-                            <li><a href="pictura.html">Pictura</a></li>
-                            <li><a href="modelat.html">Modelat</a></li>
-                            <li><a href="margelit.html">Mărgelit</a></li>
-                            <li><a href="crosetat.html">Croșetat</a></li>
-                            <li><a href="sculptura.html">Sculptură</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="info.html">Informații</a>
-                        <ul>
-                            <li><a href="info.html#despre">Despre Noi</a></li>
-                            <li><a href="info.html#contact">Contact</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                
-            </nav>
 
-            <script>
-                const hamburger = document.getElementById('hamburger');
-                const meniu = document.getElementById('meniu');
-
-                hamburger.addEventListener('click', () => {
-                    meniu.classList.toggle('active');
-                });
-
-            </script>
-        </header>
+        <%- include ('../fragmente/titlu') %>
 
         <div class="content">
 
@@ -87,9 +52,9 @@
             
             <figure>
                 <picture>
-                    <source media="(min-width: 800px)" srcset="resurse/img/hh1_large.jpg">
-                    <source media="(min-width: 500px)" srcset="resurse/img/hh1_medium.jpg">
-                    <img src="resurse/img/hh1_small.jpg" alt="Margele">
+                    <source media="(min-width: 800px)" srcset="/res/img/hh1_large.jpg">
+                    <source media="(min-width: 500px)" srcset="/res/img/hh1_medium.jpg">
+                    <img src="/res/img/hh1_small.jpg" alt="Margele">
                 </picture>
                 <figcaption>Mărgele de calitate pentru toate proiectele: Miyuki, Toho și sticlă presată!</figcaption>
             </figure>
@@ -160,7 +125,7 @@
                 <section id="descarcari">
                     <h3>Descărcări</h3>
                     <p>Puteți descărca catalogul nostru de produse de mai jos:</p>
-                    <a href="resurse/catalog.pdf" download="Catalog_Handmade_Heaven">Descarcă Catalogul</a>
+                    <a href="/res/catalog.pdf" download="Catalog_Handmade_Heaven">Descarcă Catalogul</a>
                 </section>
 
                 
@@ -259,16 +224,6 @@
             statistici site
         </div>
 
-        <footer>
-            <a href="#" title="sus" id="link-top">Înapoi la începutul paginii</a>
-            <address>
-                <a href="tel:+40749161666">+40 749 161 666</a><br>
-                <a href="whatsapp://send?phone=+40749161666">WhatsApp</a><br>
-                <a href="mailto:contact@handmadeheaven.ro">contact@handmadeheaven.ro</a><br>
-                <a href="https://goo.gl/maps/rTo6XUrVVcbNodm36">Aleea Șmecher nr. 7, Sector 3, București</a>
-            </address>
-            &copy; 2025 Handmade Heaven
-            <time datetime="2025-03-01">01 martie 2025</time>
-        </footer>
-    <!-- </div> -->
+        <%- include('../fragmente/footer.ejs')%>
+
 </html>
