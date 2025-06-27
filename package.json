@@ -1,5 +1,24 @@
 {
   "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
     "scss": "^0.2.4"
-  }
+  },
+  "name": "proiect-tehnici-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreea-mgh/proiect-tehnici-web.git"
+  },
+  "author": "Andreea Megherlich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreea-mgh/proiect-tehnici-web/issues"
+  },
+  "homepage": "https://github.com/andreea-mgh/proiect-tehnici-web#readme",
+  "description": "Proiect tehnici Web"
 }
