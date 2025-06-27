@@ -6,7 +6,7 @@ const fs = require('fs');
 
 const app = express();
 
-
+// generat foldere
 const vect_foldere = ["temp"];
 
 vect_foldere.forEach(folder => {
@@ -18,7 +18,7 @@ vect_foldere.forEach(folder => {
 });
 
 
-
+// erori (global???)
 
 global.obGlobal = {
     obErori: null
@@ -36,7 +36,6 @@ function initErori() {
 }
 initErori();
 
-// const erori = JSON.parse(fs.readFileSync('erori.json', 'utf8'));
 function afiseazaEroare(res, identificator) {
   let eroare = obGlobal.obErori.info_erori.find(e => e.identificator == identificator);
   if (!eroare) eroare = obGlobal.obErori.eroare_default;
@@ -51,9 +50,42 @@ function afiseazaEroare(res, identificator) {
   });
 }
 
+// galerie
+function oraInInterval(oraCurenta, interval) {
+    let [start, end] = interval.split("-");
+    let [hStart, mStart] = start.split(":").map(Number);
+    let [hEnd, mEnd] = end.split(":").map(Number);
+
+    let startMin = hStart * 60 + mStart;
+    let endMin = hEnd * 60 + mEnd;
+
+    let curMin = oraCurenta.getHours() * 60 + oraCurenta.getMinutes();
+
+    // Interval normal
+    if (startMin <= endMin) {
+        return curMin >= startMin && curMin <= endMin;
+    }
+    // peste miezul nopții
+    else {
+        return curMin >= startMin || curMin <= endMin;
+    }
+}
+app.get("/galerie", (req, res) => {
+    const imagini = JSON.parse(fs.readFileSync("galerie.json", "utf8"));
+    imagini.imagini.forEach(img => {
+        img.cale_imagine = path.join(imagini.cale_galerie, img.cale_imagine);
+    });
+    
+    
+    const acum = new Date();
+    const imaginiAfisate = imagini.imagini.filter(img => oraInInterval(acum, img.timp));
+
+    res.render("pagini/galerie", { imagini: imaginiAfisate });
+});
 
 
-// index.ejs
+
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use('/res', express.static(path.join(__dirname, 'resurse')));

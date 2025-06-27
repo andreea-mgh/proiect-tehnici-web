@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+<%- include ('../fragmente/head') %>
+<body>
+
+        <div class="top-button">
+            <a href="#top" title="sus" id="link-top">&#x25B4</a>
+        </div>
+        <div class="watermark print-only">Andreea Megherlich</div>
+
+        <%- include ('../fragmente/titlu') %>
+
+        <div class="content">
+
+
+        <!-- <%- JSON.stringify(imagini) %> -->
+        <div class="galerie-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+            <% imagini.slice(0, 10).forEach(function(img, idx) { %>
+                <div class="galerie-item">
+                    <img src="<%= img.cale_imagine %>" alt="<%= img.descriere %>" style="width:100%; height:auto;">
+                    <div class="galerie-caption"><%= img.descriere %></div>
+                </div>
+            <% }); %>
+        </div>
+
+        </div>
+
+
+        <%- include('../fragmente/footer.ejs')%>
+
+</html>

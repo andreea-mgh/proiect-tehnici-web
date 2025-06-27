@@ -1,0 +1,96 @@
+{
+    "cale_galerie": "/res/img/galerie",
+    "imagini": [
+        {
+            "cale_imagine":"i1.png",
+            "titlu":"unu",
+            "descriere":"text descriere",
+            "timp":"09:00-12:00"
+        },
+        {
+            "cale_imagine":"i2.png",
+            "titlu":"doi",
+            "descriere":"text descriere",
+            "timp":"08:00-14:00"
+        },
+        {
+            "cale_imagine":"i3.png",
+            "titlu":"trei",
+            "descriere":"text descriere",
+            "timp":"15:00-21:00"
+        },
+        {
+            "cale_imagine":"i4.png",
+            "titlu":"patru",
+            "descriere":"text descriere",
+            "timp":"00:00-23:00"
+        },
+        {
+            "cale_imagine":"i5.png",
+            "titlu":"cinci",
+            "descriere":"text descriere",
+            "timp":"23:00-00:00"
+        },
+        {
+            "cale_imagine":"i5.png",
+            "titlu":"e",
+            "descriere":"text descriere",
+            "timp":"13:00-00:00"
+        },
+        {
+            "cale_imagine":"i5.png",
+            "titlu":"e",
+            "descriere":"text descriere",
+            "timp":"00:00-18:00"
+        },
+        {
+            "cale_imagine":"i5.png",
+            "titlu":"e",
+            "descriere":"text descriere",
+            "timp":"16:00-02:00"
+        },
+        {
+            "cale_imagine":"i3.png",
+            "titlu":"trei",
+            "descriere":"text descriere",
+            "timp":"15:00-23:00"
+        },
+        {
+            "cale_imagine":"i4.png",
+            "titlu":"patru",
+            "descriere":"text descriere",
+            "timp":"00:00-23:00"
+        },
+        {
+            "cale_imagine":"i2.png",
+            "titlu":"cinci",
+            "descriere":"text descriere",
+            "timp":"15:00-19:00"
+        },
+        {
+            "cale_imagine":"i2.png",
+            "titlu":"e",
+            "descriere":"text descriere",
+            "timp":"13:00-16:00"
+        },
+        {
+            "cale_imagine":"i2.png",
+            "titlu":"e",
+            "descriere":"text descriere",
+            "timp":"07:00-21:00"
+        },
+        {
+            "cale_imagine":"i2.png",
+            "titlu":"e",
+            "descriere":"text descriere",
+            "timp":"06:00-02:00"
+        },
+        {
+            "cale_imagine":"i1.png",
+            "titlu":"e",
+            "descriere":"text descriere",
+            "timp":"06:00-02:00"
+        }
+    ]
+
+}
