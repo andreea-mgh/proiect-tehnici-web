@@ -423,9 +423,79 @@ iframe.video {
 
 
 
+.print-only {
+  display: none;
+}
+
 @media print{
+  body{
+    display: block;
+  }
+
   img,
-  iframe {
-    display: none !important;
+  iframe,
+  .navbar,
+  .vid-tabs,
+  .top-button{
+    display: none;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  header {
+    page-break-after: always;
+    font-size: 2.5em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+  // margini
+
+  @page {
+    size: A4;
+    margin-top: 2cm;
+    margin-bottom: 2cm;
+  }
+
+  @page :left {
+    margin-left: 2.5cm;
+    margin-right: 0.5cm;
+  }
+
+  @page :right {
+    margin-left: 0.5cm;
+    margin-right: 2.5cm;
+  }
+
+
+
+  .watermark {
+    position: fixed;
+    top: calc(50% - 1cm);
+    left: calc(50% - 50px);
+    height: 2cm;
+    width: 100px;
+    // padding: 0.5cm;
+    border: 3px double black;
+    text-align: center;
+    line-height: 2cm;
+    font-size: 7pt;
+    opacity: 0.65;
+    z-index: 9999;
+    pointer-events: none;
+    color: black;
   }
 }
