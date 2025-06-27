@@ -1,27 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="ro">
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="art&hobby, arta, unelte, handmade, inspiratie, idei creative, produse hobby, hobby creativ, accesorii hobby, crosetat, sculptat">
-    <meta name="description" content="Cea mai bună sursă de materiale și inspirație pentru artiști!">
-    <meta name="author" content="Andreea Megherlich"> 
-    <title>Handmade Heaven</title>
-
-    <!-- ICO  -->
-    <link rel="icon" type="image/png" href="/res/ico/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/svg+xml" href="/res/ico/favicon.svg">
-    <link rel="shortcut icon" href="/res/ico/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/res/ico/apple-touch-icon.png">
-    <link rel="manifest" href="/res/ico/site.webmanifest">
-
-    <!-- CSS  -->
-    <link href="/res/css/general.css" rel="stylesheet" type="text/css">
-
-
-</head>
+<%- include('../fragmente/head') %>
 
 <body>
 
@@ -97,47 +77,6 @@
                         </ul>
                     </li>
                 </ul>
-            </section>
-        </section>
-
-        <section id="info">
-            <h2>Informații</h2>
-            <p>Mai jos găsiți informații despre site-ul Handmade Heaven.</p>
-
-            <section id="despre">
-                <h3>Despre Noi</h3>
-
-                <q>Nu poți epuiza creativitatea, cu cât o folosești mai mult, cu atât vei avea mai multă. - Maya Angelou</q>
-
-                <p>Bine ați venit la Handmade Heaven! Suntem dedicați să oferim o gamă largă de produse de înaltă calitate pentru pasionații de <b>artă și hobby</b>. Indiferent dacă sunteți un artist profesionist sau un începător entuziast, veți găsi tot ceea ce aveți nevoie aici pentru a vă exprima <b>creativitatea</b> și a vă bucura de timpul liber.</p>
-
-                <p>Oferta noastră cuprinde o varietate de produse, inclusiv seturi de <b>croșetat și tricotat</b>, unelte de <b>sculptat</b>, decorațiuni și suporturi pentru proiecte artistice și multe altele. Toate produsele noastre sunt selecționate cu atenție pentru a vă oferi cele mai bune opțiuni de pe piață. Dacă aveți nevoie de sfaturi în alegerea produselor sau de <b>inspirație</b> pentru proiectele voastre <b>handmade</b>, puteți consulta secțiunea noastră de <b>tutoriale</b> video și <b>idei creative</b>.</p>
-                
-                <h3>Întrebări frecvente</h3>
-                <details>
-                    <summary>Cum pot plăti?</summary>
-                    <p>Plățile se pot face prin transfer bancar, prin card, prin <a href="https://www.paypal.com/ro/home">PayPal</a> sau cash în cazul celor cu ridicare personală.</p>
-                </details>
-                <details>
-                    <summary>Cum pot ridica comanda?</summary>
-                    <p>Comenzile pot fi ridicate de la sediul nostru, fără cost de livrare, sau livrate prin <a href="https://www.bookurier.ro/colete/AWB/track0.php">Bookurier</a> sau prin <s>Sameday Easybox</s> <ins>pachetomat Poșta Română</ins>.</p>
-                </details>
-                <section id="descarcari">
-                    <h3>Descărcări</h3>
-                    <p>Puteți descărca catalogul nostru de produse de mai jos:</p>
-                    <a href="/res/catalog.pdf" download="Catalog_Handmade_Heaven">Descarcă Catalogul</a>
-                </section>
-
-                
-            </section>
-            <section id="contact">
-                <h3>Contact</h3>
-                <p>Pentru asistență și sesizări ne puteți contacta la:</p>
-                <ul>
-                    <li>Tel: <a href="tel:+40749161666">+40 749 161 666</a></li>
-                    <li>Mail: <a href="mailto:contact@handmadeheaven.ro">contact@handmadeheaven.ro</a></li>
-                </ul>
-                <p>Ne găsiți la sediul nostru de la adresa: Aleea Firicel nr. 7, Sector 3, București</p>
             </section>
         </section>
 
@@ -217,7 +156,7 @@
         </div>
 
         <div class="users">
-            useri online
+            <p>Adresa ta IP: <%= ip %></p>
         </div>
 
         <div class="stats">

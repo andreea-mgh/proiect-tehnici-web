@@ -19,6 +19,13 @@
       "titlu": "Acces interzis",
       "text": "Nu aveți permisiunea să accesați această resursă.",
       "imagine": "403.png"
+    },
+    {
+      "identificator": 400,
+      "status": true,
+      "titlu": "Cerere invalidă",
+      "text": "Cererea trimisă nu este validă.",
+      "imagine": "400.png"
     }
   ]
 }

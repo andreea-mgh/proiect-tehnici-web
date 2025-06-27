@@ -6,6 +6,20 @@ const fs = require('fs');
 
 const app = express();
 
+
+const vect_foldere = ["temp"];
+
+vect_foldere.forEach(folder => {
+    const caleFolder = path.join(__dirname, folder);
+    if (!fs.existsSync(caleFolder)) {
+        fs.mkdirSync(caleFolder);
+        console.log(`Am creat folderul: ${caleFolder}`);
+    }
+});
+
+
+
+
 global.obGlobal = {
     obErori: null
 };
@@ -16,6 +30,7 @@ function initErori() {
     eroriJson.info_erori.forEach(eroare => {
         eroare.imagine = path.join(eroriJson.cale_baza, eroare.imagine);
     });
+    eroriJson.eroare_default.imagine = path.join(eroriJson.cale_baza, eroriJson.eroare_default.imagine);
 
     obGlobal.obErori = eroriJson;
 }
@@ -44,8 +59,28 @@ app.set('views', path.join(__dirname, 'views'));
 app.use('/res', express.static(path.join(__dirname, 'resurse')));
 
 
+
+app.use("/res", (req, res, next) => {
+    if (req.path.match(/\/$/)) {
+        return afiseazaEroare(res, 403);
+    } else {
+        next();
+    }
+});
+
+app.use((req, res, next) => {
+    if (req.url.match(/\.ejs(\?|$)/i)) {
+        return afiseazaEroare(res, 400);
+        
+    } else {
+        next();
+    }
+});
+
+
+
 app.get(['/', '/index', '/home'], (req, res) => {
-    res.render('pagini/index', { title: 'Proiect Tehnici Web' });
+    res.render('pagini/index', { title: 'Proiect Tehnici Web' , ip: req.ip });
 });
 
 app.get("/:pagina", (req, res) => {
@@ -53,7 +88,7 @@ app.get("/:pagina", (req, res) => {
     const pagina = req.params.pagina || 'index';
     console.log(`Cerere pentru pagina: ${pagina}`);
 
-    res.render(pagina, (err, html) => {
+    res.render(`pagini/${pagina}`, (err, html) => {
         if (err) {
             console.error(`Eroare la încărcarea paginii "${pagina}":`, err.message);
             
@@ -68,8 +103,9 @@ app.get("/:pagina", (req, res) => {
     });
 });
 
-
-
+app.get("/favicon.ico", (req, res) => {
+    res.sendFile(path.join(__dirname, "resurse", "ico", "favicon.ico"));
+});
 
 
 
