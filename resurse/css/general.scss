@@ -32,6 +32,32 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  color: $accent-color;
+  text-decoration: none;
+  background: radial-gradient(ellipse 100% 1em, $accent-color 0%, $accent-color 40%, transparent 80%, transparent 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 0 0;
+  transition: background-size 0.5s ease;
+
+  &:hover {
+    background-size: 100% 100%;
+  }
+}
+
+a:visited {
+  color: $accent-color-secondary;
+}
+
+a[href^="http"]::before {
+  content: "\2BB3";
+  font-size: 1.5em;
+}
+a[href^="http"]:hover::before {
+  color: $text-color;
+}
+
 img {
   max-width: 100%;
 }
