@@ -21,7 +21,7 @@ function initErori() {
 }
 initErori();
 
-const erori = JSON.parse(fs.readFileSync('erori.json', 'utf8'));
+// const erori = JSON.parse(fs.readFileSync('erori.json', 'utf8'));
 function afiseazaEroare(res, identificator) {
   let eroare = obGlobal.obErori.info_erori.find(e => e.identificator == identificator);
   if (!eroare) eroare = obGlobal.obErori.eroare_default;
