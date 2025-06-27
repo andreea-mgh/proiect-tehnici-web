@@ -32,24 +32,38 @@
             <!-- <h1>HANDMADE HEAVEN</h1> -->
              <img src="resurse/img/logo_hh.png" alt="Logo Handmade Heaven" style="height: 10em;">
         
-            <nav hidden>
-                <ul class="meniu">
+            <nav class="navbar">
+                <div class="hamburger" id="hamburger">&#9776;</div>
+                <ul class="meniu" id="meniu">
                     <li>Acasă</li>
-                    <li><a href="#magazin">Magazin</a>
+                    <li><a href="magazin.html">Magazin</a>
                         <ul>
-                            <li><a href="#descriere">Descriere</a></li>
-                            <li><a href="#categorii">Categorii</a></li>
+                            <li><a href="pictura.html">Pictura</a></li>
+                            <li><a href="modelat.html">Modelat</a></li>
+                            <li><a href="margelit.html">Mărgelit</a></li>
+                            <li><a href="crosetat.html">Croșetat</a></li>
+                            <li><a href="sculptura.html">Sculptură</a></li>
                         </ul>
                     </li>
-                    <li><a href="#info">Informații</a>
+                    <li><a href="info.html">Informații</a>
                         <ul>
-                            <li><a href="#despre">Despre Noi</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="info.html#despre">Despre Noi</a></li>
+                            <li><a href="info.html#contact">Contact</a></li>
                         </ul>
                     </li>
                 </ul>
                 
             </nav>
+
+            <script>
+                const hamburger = document.getElementById('hamburger');
+                const meniu = document.getElementById('meniu');
+
+                hamburger.addEventListener('click', () => {
+                    meniu.classList.toggle('active');
+                });
+
+            </script>
         </header>
 
         <div class="content">
