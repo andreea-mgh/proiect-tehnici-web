@@ -126,20 +126,30 @@ function oraInInterval(interval) {
         return curMin >= startMin || curMin <= endMin;
     }
 }
-function getImaginiGalerie() {
+function getImaginiGalerie(filter="nu") {
     const imagini = JSON.parse(fs.readFileSync("galerie.json", "utf8"));
     imagini.imagini.forEach(img => {
         img.cale_imagine = path.join(imagini.cale_galerie, img.cale_imagine);
     });
-    return imagini.imagini.filter(img => oraInInterval(img.timp));
-    // testeaza fara filtru
-    // return imagini.imagini;
+    if (filter == "ora") {
+        return imagini.imagini.filter(img => oraInInterval(img.timp));
+    }
+    else if (filter == "dinamic") {
+        return imagini.imagini.filter(img => img.galerie_dinamica);
+    }
+    else {
+        return imagini.imagini;
+    }
+
 }
 app.get("/galerie", (req, res) => {
 
-    res.render("pagini/galerie", { imagini: getImaginiGalerie() });
+    res.render("pagini/galerie", { imagini: getImaginiGalerie("ora") });
 });
+app.get("/galerie2", (req, res) => {
 
+    res.render("pagini/galerie2", { imagini: getImaginiGalerie("dinamic") });
+});
 
 
 
@@ -169,7 +179,7 @@ app.use((req, res, next) => {
 
 
 app.get(['/', '/index', '/home'], (req, res) => {
-    res.render('pagini/index', { title: 'Proiect Tehnici Web' , ip: req.ip, imagini: getImaginiGalerie() });
+    res.render('pagini/index', { title: 'Proiect Tehnici Web' , ip: req.ip, imagini: getImaginiGalerie("ora") });
 });
 
 app.get("/:pagina", (req, res) => {

@@ -1,0 +1,41 @@
+
+
+
+<div class="slideshow-window">
+    <div class="grid" id="grid">
+      <!-- 9 Images (3x3 Grid) -->
+    <% const indici = [0, 4, 5, 1, 3, 2, 7, 8, 6]; %>
+    <% for(let i = 0; i < 9; i++) { %>
+        <div class="grid-item">
+            <img src="<%= imagini[indici[i]].cale_imagine %>" />
+        </div>
+    <% } %>
+</div>
+
+<script>
+    const indici = [0, 3, 5, 4, 1, 2, 8, 6, 7];
+    const grid = document.getElementById("grid");
+    const cols = 3;
+    const rows = 3;
+    let current = 0;
+    const vpsize = {
+      width: 600,
+      height: 600
+    };
+
+    setInterval(() => {
+        const col = indici[current] % cols;
+        const row = Math.floor(indici[current] / cols);
+        console.log(`Current: ${indici[current]}, Col: ${col}, Row: ${row}`);
+        grid.style.transform = `translate(-${col * vpsize.width}px, -${row * vpsize.height}px)`;
+
+        const items = document.querySelectorAll('.grid-item img');
+        let prev = (current - 1 + cols * rows) % (cols * rows);
+        items[indici[prev]].classList.add('spin');
+        setTimeout(() => {
+            items[indici[prev]].classList.remove('spin');
+            current = (current + 1) % (cols * rows);
+        }, 500);
+    }, 2500);
+    
+  </script>

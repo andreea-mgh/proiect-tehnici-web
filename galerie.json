@@ -5,6 +5,7 @@
             "cale_imagine":"i1.png",
             "titlu":"unu",
             "descriere":"text descriere",
+            "galerie_dinamica": false,
             "timp":"09:00-12:00"
         },
         {
@@ -91,6 +92,72 @@
             "descriere":"text descriere",
             "timp":"06:00-02:00"
         }
+
+        ,
+{
+  "cale_imagine": "d1.png",
+  "titlu": "dinamic unu",
+  "descriere": "text descriere",
+  "galerie_dinamica": true,
+  "timp": "00:00-23:00"
+},
+{
+  "cale_imagine": "d2.png",
+  "titlu": "dinamic doi",
+  "descriere": "text descriere",
+  "galerie_dinamica": true,
+  "timp": "00:00-23:00"
+},
+{
+  "cale_imagine": "d3.png",
+  "titlu": "dinamic trei",
+  "descriere": "text descriere",
+  "galerie_dinamica": true,
+  "timp": "00:00-23:00"
+},
+{
+  "cale_imagine": "d4.png",
+  "titlu": "dinamic patru",
+  "descriere": "text descriere",
+  "galerie_dinamica": true,
+  "timp": "00:00-23:00"
+},
+{
+  "cale_imagine": "d5.png",
+  "titlu": "dinamic cinci",
+  "descriere": "text descriere",
+  "galerie_dinamica": true,
+  "timp": "00:00-23:00"
+},
+{
+  "cale_imagine": "d6.png",
+  "titlu": "dinamic șase",
+  "descriere": "text descriere",
+  "galerie_dinamica": true,
+  "timp": "00:00-23:00"
+},
+{
+  "cale_imagine": "d7.png",
+  "titlu": "dinamic șapte",
+  "descriere": "text descriere",
+  "galerie_dinamica": true,
+  "timp": "00:00-23:00"
+},
+{
+  "cale_imagine": "d8.png",
+  "titlu": "dinamic opt",
+  "descriere": "text descriere",
+  "galerie_dinamica": true,
+  "timp": "00:00-23:00"
+},
+{
+  "cale_imagine": "d9.png",
+  "titlu": "dinamic nouă",
+  "descriere": "text descriere",
+  "galerie_dinamica": true,
+  "timp": "00:00-23:00"
+}
+
     ]
 
 }
