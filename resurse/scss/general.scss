@@ -35,7 +35,7 @@ body {
 a {
   color: $accent-color;
   text-decoration: none;
-  background: radial-gradient(ellipse 100% 1em, $accent-color 0%, $accent-color 40%, transparent 80%, transparent 100%);
+  background: radial-gradient(ellipse 100% 1em, $secondary-color 0%, $secondary-color 40%, transparent 80%, transparent 100%);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 0 0;
@@ -44,12 +44,10 @@ a {
   &:hover {
     background-size: 100% 100%;
   }
-}
 
-
-
-a:visited {
-  color: $accent-color-secondary;
+  &:visited {
+    color: $accent-color-secondary;
+  }
 }
 
 a[href^="http"]::before {
