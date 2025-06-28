@@ -511,3 +511,11 @@ iframe.video {
     transform: rotate(360deg);
   }
 }
+hr {
+  background: repeating-linear-gradient(to right, #701e5e 0px, #701e5e 20px, rgba(0, 0, 0, 0) 20px, rgba(0, 0, 0, 0) 40px), repeating-linear-gradient(to right, #ffc8b5 0px, #ffc8b5 20px, rgba(0, 0, 0, 0) 20px, rgba(0, 0, 0, 0) 40px), repeating-linear-gradient(to right, #ff521b 0px, #ff521b 20px, rgba(0, 0, 0, 0) 20px, rgba(0, 0, 0, 0) 40px);
+  background-position: 0 0, 0 3px, 0 6px;
+  background-repeat: no-repeat, no-repeat;
+  background-size: auto 3px, auto 3px, auto 3px;
+  height: 9px;
+  border: none;
+}

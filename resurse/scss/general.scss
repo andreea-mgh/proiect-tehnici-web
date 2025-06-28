@@ -607,3 +607,36 @@ iframe.video {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
+
+
+
+
+hr {
+  background: repeating-linear-gradient(
+    to right,
+    $accent-color-secondary 0px,
+    $accent-color-secondary 20px,
+    #0000 20px,
+    #0000 40px
+  ),
+  repeating-linear-gradient(
+    to right,
+    $background-color-secondary 0px,
+    $background-color-secondary 20px,
+    #0000 20px,
+    #0000 40px
+  ),
+  repeating-linear-gradient(
+    to right,
+    $accent-color 0px,
+    $accent-color 20px,
+    #0000 20px,
+    #0000 40px
+  );
+  background-position: 0 0, 0 3px, 0 6px;
+  background-repeat: no-repeat, no-repeat;
+  background-size: auto 3px, auto 3px, auto 3px;
+
+  height: 9px;
+  border: none;
+}
