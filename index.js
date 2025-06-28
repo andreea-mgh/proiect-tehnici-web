@@ -106,7 +106,8 @@ fs.watch(obGlobal.folderScss, (eventType, filename) => {
 
 
 // galerie
-function oraInInterval(oraCurenta, interval) {
+function oraInInterval(interval) {
+    const oraCurenta = new Date();
     let [start, end] = interval.split("-");
     let [hStart, mStart] = start.split(":").map(Number);
     let [hEnd, mEnd] = end.split(":").map(Number);
@@ -125,19 +126,18 @@ function oraInInterval(oraCurenta, interval) {
         return curMin >= startMin || curMin <= endMin;
     }
 }
-app.get("/galerie", (req, res) => {
+function getImaginiGalerie() {
     const imagini = JSON.parse(fs.readFileSync("galerie.json", "utf8"));
     imagini.imagini.forEach(img => {
         img.cale_imagine = path.join(imagini.cale_galerie, img.cale_imagine);
     });
-    
-    
-    const acum = new Date();
-    // const imaginiAfisate = imagini.imagini.filter(img => oraInInterval(acum, img.timp));
+    return imagini.imagini.filter(img => oraInInterval(img.timp));
     // testeaza fara filtru
-    const imaginiAfisate = imagini.imagini;
+    // return imagini.imagini;
+}
+app.get("/galerie", (req, res) => {
 
-    res.render("pagini/galerie", { imagini: imaginiAfisate });
+    res.render("pagini/galerie", { imagini: getImaginiGalerie() });
 });
 
 
@@ -169,7 +169,7 @@ app.use((req, res, next) => {
 
 
 app.get(['/', '/index', '/home'], (req, res) => {
-    res.render('pagini/index', { title: 'Proiect Tehnici Web' , ip: req.ip });
+    res.render('pagini/index', { title: 'Proiect Tehnici Web' , ip: req.ip, imagini: getImaginiGalerie() });
 });
 
 app.get("/:pagina", (req, res) => {
