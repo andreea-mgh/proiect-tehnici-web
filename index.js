@@ -78,7 +78,9 @@ app.get("/galerie", (req, res) => {
     
     
     const acum = new Date();
-    const imaginiAfisate = imagini.imagini.filter(img => oraInInterval(acum, img.timp));
+    // const imaginiAfisate = imagini.imagini.filter(img => oraInInterval(acum, img.timp));
+    // testeaza fara filtru
+    const imaginiAfisate = imagini.imagini;
 
     res.render("pagini/galerie", { imagini: imaginiAfisate });
 });

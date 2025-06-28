@@ -46,6 +46,8 @@ a {
   }
 }
 
+
+
 a:visited {
   color: $accent-color-secondary;
 }
@@ -56,6 +58,21 @@ a[href^="http"]::before {
 }
 a[href^="http"]:hover::before {
   color: $text-color;
+}
+
+
+// sterge uratenia de la restul linkurilor
+
+.vid-tabs a {
+  background: none;
+
+  &::before {
+    content: '';
+  }
+}
+
+.meniu a {
+  background: none;
 }
 
 img {
@@ -523,5 +540,36 @@ iframe.video {
     z-index: 9999;
     pointer-events: none;
     color: black;
+  }
+}
+
+
+
+
+
+// galerie
+.tabel-galerie {
+  th, td{
+    padding: 0;
+    text-align: center;
+    border: 1px solid $accent-color-secondary;
+    width: 25%
+  }
+  figure {
+    padding: 0;
+    margin: 0;
+    
+    &:hover{
+      figcaption{
+        color: $accent-color;
+        background-color: $secondary-color;
+        font-weight: bold;
+      }
+      picture>img {
+        // 15 din original / 130 final => 11.538%
+        transform: scale(1.3) translateY(-11.538%);
+        transition: transform 0.3s ease;
+      }
+    }
   }
 }

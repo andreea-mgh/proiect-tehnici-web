@@ -14,15 +14,38 @@
         <div class="content">
 
 
-        <!-- <%- JSON.stringify(imagini) %> -->
-        <div class="galerie-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
-            <% imagini.slice(0, 10).forEach(function(img, idx) { %>
-                <div class="galerie-item">
-                    <img src="<%= img.cale_imagine %>" alt="<%= img.descriere %>" style="width:100%; height:auto;">
-                    <div class="galerie-caption"><%= img.descriere %></div>
-                </div>
-            <% }); %>
-        </div>
+        <% 
+        const totalCells = 12;  // 3x4 grid
+        const skipIndices = [5, 6]; // Zero-based indices to skip (6th and 7th positions)
+        let elementIndex = 0;
+        const litere = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l'];
+        %>
+
+        <table class="tabel-galerie">
+        <% for (let row = 0; row < 3; row++) { %>
+            <tr>
+            <% for (let col = 0; col < 4; col++) { 
+                const cellIndex = row * 4 + col;
+            %>
+                <% if (skipIndices.includes(cellIndex)) { %>
+                <td></td> <!-- Empty cell -->
+                <% } else if (elementIndex < imagini.length) { %>
+                <td>
+                    <figure>
+                        <picture>
+                            <img src="<%= imagini[elementIndex].cale_imagine %>" alt="<%= imagini[elementIndex].titlu %>" title="<%= imagini[elementIndex].descriere %>">
+                        </picture>
+                        <figcaption><%= litere[elementIndex] %>. <%= imagini[elementIndex].titlu %></figcaption>
+                    </figure>
+                    <% elementIndex++; %>
+                </td>
+                <% } else { %>
+                <td></td>
+                <% } %>
+            <% } %>
+            </tr>
+        <% } %>
+        </table>
 
         </div>
 
